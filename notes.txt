@@ -1,0 +1,3 @@
+git config --global user.email--->this command used to get username of the GitHub account
+.gitignore--->used to remove all unwanted files or important files
+gitpull
