@@ -1,5 +1,5 @@
 import sys
-import logging
+from src.logger import logging
 
 def error_message_details(error, error_detail: sys):
     # Getting traceback info
@@ -18,3 +18,11 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
 
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
+    
+    try:
+        a = 1 / 0  # This will raise a ZeroDivisionError
+    except Exception as e:
+        logging.info("Divide by zero error occurred")
+        raise CustomException(e, sys)
